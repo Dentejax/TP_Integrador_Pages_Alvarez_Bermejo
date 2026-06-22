@@ -61,11 +61,9 @@ Implementando los conceptos de Programación Orientada a Objetos vistos durante 
 * Eliminar pedido (baja lógica)
 * Control de stock
 
----
-
 # Estructura del Proyecto
 
-```text
+```
 src/
 └── integrado/prog2/
     ├── Main.java
@@ -105,30 +103,20 @@ src/
 
 Todas las entidades heredan de la clase base:
 
-```java
+```
 Base
 ```
 
 que contiene:
 
-```java
+```
 id
 eliminado
 ```
 
 ## Composición
 
-Relación entre:
-
-```java
-Pedido
-```
-
-y
-
-```java
-DetallePedido
-```
+Relación entre **Pedido** y **DetallePedido**
 
 Un pedido contiene múltiples detalles.
 
@@ -136,7 +124,7 @@ Un pedido contiene múltiples detalles.
 
 Se utilizaron los siguientes enums:
 
-```java
+```
 Estado
 FormaPago
 Rol
@@ -144,13 +132,7 @@ Rol
 
 ## Interfaces
 
-Implementación de:
-
-```java
-Calculable
-```
-
-para el cálculo automático del total de pedidos.
+Implementación de **Calculable** para el cálculo automático del total de pedidos.
 
 ## Manejo de Excepciones
 
@@ -175,24 +157,17 @@ Se desarrollaron excepciones personalizadas para controlar errores de negocio:
 
 Para esta versión del proyecto no se utilizó base de datos.
 
-La información se almacena temporalmente en memoria utilizando:
-
-```java
-ArrayList
-```
-
-durante la ejecución del programa.
+La información se almacena temporalmente en memoria utilizando **ArrayList** durante la ejecución del programa.
 
 # Ejecución
 
 1. Abrir el proyecto en IntelliJ IDEA.
 2. Ejecutar la clase:
 
-```java
+```
 Main.java
 ```
 
 3. Utilizar el menú principal para gestionar categorías, productos, usuarios y pedidos.
 
 # Enlace del video
-
