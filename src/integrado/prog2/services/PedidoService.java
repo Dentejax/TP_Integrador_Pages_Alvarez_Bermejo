@@ -23,10 +23,10 @@ public class PedidoService {
         nextDetalleId = 1L;
     }
 
-    public Pedido crear(Usuario usuario) {
+    public Pedido crear(Usuario usuario, FormaPago formaPago) {
 
         Pedido pedido = new Pedido(nextId++, usuario);
-
+        pedido.setFormaPago(formaPago);
         pedidos.add(pedido);
 
         return pedido;
