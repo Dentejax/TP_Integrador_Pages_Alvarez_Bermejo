@@ -579,7 +579,23 @@ public class Main {
             Long idUsuario = leerLong("ID usuario: ");
 
             Usuario usuario = usuarioService.buscarPorId(idUsuario);
-            Pedido pedido = pedidoService.crear(usuario);
+
+            System.out.println("\n--- Seleccione la Forma de Pago ---");
+            FormaPago[] formas = FormaPago.values();
+            for (int i = 0; i < formas.length; i++) {
+                System.out.println((i + 1) + ". " + formas[i]);
+            }
+
+            int opcionPago = leerInt("Opción: ");
+
+            while (opcionPago < 1 || opcionPago > formas.length) {
+                System.out.println("Opción inválida. Intente de nuevo.");
+                opcionPago = leerInt("Opción: ");
+            }
+
+            FormaPago pagoSeleccionado = formas[opcionPago - 1];
+
+            Pedido pedido = pedidoService.crear(usuario, pagoSeleccionado);
 
             String continuar;
 
@@ -602,6 +618,7 @@ public class Main {
             } while(
                     continuar.equalsIgnoreCase("S")
             );
+
 
             System.out.println("Pedido creado correctamente");
 
